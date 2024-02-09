@@ -5,15 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Market Kurly Clone Coding</title>
     <link rel="stylesheet" href="../library/css/goodDetail.css" />
+
+    <!--index부분-->
+    <!-- main css -->
+    <link rel="stylesheet" href="../library/css/IndexStyle.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <!-- js -->
+    <script defer src="../library/js/index.js"></script>
+
   </head>
   <body>
+
+
+  <!-- 헤더 및 네비게이션 -->
+  <header>
+    <div class="register-row">
+      <div class="register main-color cur">회원가입</div>
+      <div class="seperator sub-color1">|</div>
+      <div class="login cur">로그인</div>
+    </div>
+
+    <div class="logo-row">
+      <div class="logo-icon"><a href="../index.html"><img src="../library/img/logo-icon.png" alt="Kurly"></a></div>
+      <div class="market-kurly main-color cur">마켓컬리</div>
+      <div class="seperator sub-color1">|</div>
+      <div class="beauty-kurly sub-color2 cur">뷰티컬리</div>
+      <div class="search">
+        <form action="/search" method="get" class="search-form">
+          <input type="search" class="search-box" name="search-box" placeholder="검색어를 입력해주세요">
+          <button class="search-btn" type="submit">
+            <span class="material-symbols-outlined">search</span>
+          </button>
+        </form>
+      </div>
+      <div class="location-icon vertical-uni cur">
+        <img src="../library/img/location-icon.png" class="nav3 cur" alt="location">
+      </div>
+      <div class="heart-icon vertical-uni ">
+        <img src="../library/img/heart-icon.png" class="nav3 cur" alt="heart">
+      </div>
+      <div class="cart-icon vertical-uni">
+        <img src="../library/img/cart-icon.png" class="nav3 cur" alt="cart">
+      </div>
+    </div>
+    <div class="category-row">
+      <div class="category">
+        <button class="category-btn">
+          <div class="material-symbols-outlined">menu</div>
+          <div>카테고리</div>
+        </button>
+      </div>
+      <div class="ni-font ni-margin1">신상품</div>
+      <div class="ni-font ni-margin1">베스트</div>
+      <div class="ni-font ni-margin1">알뜰쇼핑</div>
+      <div class="ni-font ni-margin1">특가/혜택</div>
+      <div class="special-shipping"><span class="main-color font-bold">샛별·하루</span>배송안내</div>
+    </div>
+  </header>
+  <!-- 헤더 및 네비게이션 종료 -->
+
+
+
     <div class="container" id="container">
       <div class="detail_main">
         <div class="section_view">
           <div class="section_left">
             <div class="thumb">
               <img
-                src="../library/img/elicegg.png"
+                src="../library/img/product-img-1.jpg"
                 alt="상품 대표 이미지"
                 class="bg"
               />
@@ -25,20 +88,22 @@
             </div>
             <div class="detail_title">
               <div class="detail_title_main">
-                <span>[상품명] 상품명 넣는곳</span>
+                <span>[선물세트] 횡성축협한우 1++ 한우 프리미엄 구이 세트(냉장)</span>
                 <span class="btn_share">
                   <button id="btnShare">공유하기</button>
                 </span>
               </div>
-              <span class="short_desc">[한줄소개] 한줄소개 넣는곳</span>
+              <span class="short_desc">갈비살200g*3, 채끝200g*3, 등심200g*3</span>
             </div>
             <div class="detail_price">
               <span class="price">
-                <span class="per">[할인율]</span> 가격 넣는곳</span
+                <span class="per">[25%]</span> <span id="gd_price" data-price="259000"> 259,000</span><span class="money_kor">원</span>
+                
+                </span
               >
             </div>
             <div class="detail_origin">
-              <span class="origin">원산지: [원산지]</span>
+              <span class="origin">원산지: 상품설명/상세정보 참조</span>
             </div>
 
             <div class="detail_delivery">
@@ -106,7 +171,7 @@
               <div class="detail_product_select_desc">
                 <div class="option">
                   <span class="count">
-                    <button type="button" class="btn down on">
+                    <button type="button" class="btn down on" >
                       수량내리기
                     </button>
                     <input
@@ -123,7 +188,7 @@
 
             <div class="detail_total_price">
               <div class="detail_total_price_main">
-                <span>총 상품금액: <span class="won">0원</span></span>
+                <span>총 상품금액: <span class="won" id="won">0</span> <span>원</span> </span>
               </div>
               <div class="detail_total_price_bottom">
                 <span class="ico">적립</span>
@@ -140,7 +205,7 @@
                   <span>
                     <img
                       src="../library/img/kurly_heart.svg"
-                      alt="마켓컬리 로고"
+                      alt="상품 찜하기"
                       class="logo_img"
                     />
                   </span>
@@ -151,7 +216,7 @@
                   <span>
                     <img
                       src="../library/img/kurly_notice.svg"
-                      alt="마켓컬리 로고"
+                      alt="상품 알림 설정"
                       class="logo_img"
                     />
                   </span>
@@ -203,7 +268,7 @@
           <section class="et-slide tab-description" id="goods-description">
             <div class="good-description-main-picture">
               <img
-                src="../library/img/elicegg.png"
+                src="../library/img/gd_product_2.jpg"
                 alt="상품 대표 이미지"
                 class="bg"
               />
@@ -239,7 +304,7 @@
           <section class="et-slide" id="goods-infomation">
             <div class="good-description-main-picture">
               <img
-                src="../library/img/elicetrack.png"
+                src="../library/img/gd_product_3.jpg"
                 alt="상품 대표 이미지"
                 class="bg"
               />
@@ -281,7 +346,7 @@
               <div  class="gr_thumb_title">
               </div>
               <div class="gr_thumb_img">
-                <img src="/library/img/elicegg.png" />
+                <img src="/library/img/gd_product_4.jpeg" data-num=1/>
               </div>
             </button>
      
@@ -289,42 +354,42 @@
               <div  class="gr_thumb_title">
               </div>
               <div class="gr_thumb_img">
-                <img src="/library/img/elicegg.png" />
+                <img src="/library/img/gd_product_4.jpeg" data-num=2/>
               </div>
             </button>
             <button class="gr_thumb">
               <div  class="gr_thumb_title">
               </div>
               <div class="gr_thumb_img">
-                <img src="/library/img/elicegg.png" />
+                <img src="/library/img/gd_product_4.jpeg" data-num=3/>
               </div>
             </button>
             <button class="gr_thumb">
               <div  class="gr_thumb_title">
               </div>
               <div class="gr_thumb_img">
-                <img src="/library/img/elicegg.png" />
+                <img src="/library/img/gd_product_4.jpeg" data-num=4/>
               </div>
             </button>
             <button class="gr_thumb">
               <div  class="gr_thumb_title">
               </div>
               <div class="gr_thumb_img">
-                <img src="/library/img/elicegg.png" />
+                <img src="/library/img/gd_product_4.jpeg" data-num=5/>
               </div>
             </button>
             <button class="gr_thumb">
               <div  class="gr_thumb_title">
               </div>
               <div class="gr_thumb_img">
-                <img src="/library/img/elicegg.png" />
+                <img src="/library/img/gd_product_4.jpeg" data-num=6/>
               </div>
             </button>
             <button class="gr_thumb">
               <div  class="gr_thumb_title">
               </div>
               <div class="gr_thumb_img">
-                <img src="/library/img/elicegg.png" />
+                <img src="/library/img/gd_product_4.jpeg" data-num=7/>
               </div>
             </button>
 
@@ -333,7 +398,7 @@
                 <span class="gr_thumb_title_font">+더보기</span>
               </div>
               <div class="gr_thumb_img">
-                <img src="/library/img/elicegg.png" />
+                <img src="/library/img/gd_product_4.jpeg" data-num=8/>
               </div>
             </button>
 
@@ -387,7 +452,7 @@
                 </div>
               <div class="gr_a_content_imgs">
                 <button class="gr_a_content_img gr_thumb">
-                  <img src="/library/img/elicegg.png" />
+                  <img src="/library/img/gd_product_4.jpeg" />
                 </button>
 
               </div>
@@ -424,10 +489,10 @@
                 </div>
               <div class="gr_a_content_imgs">
                 <button class="gr_a_content_img gr_thumb">
-                  <img src="/library/img/elicegg.png" />
+                  <img src="/library/img/gd_product_4.jpeg" />
                 </button>
                 <button class="gr_a_content_img gr_thumb">
-                  <img src="/library/img/elicegg.png" />
+                  <img src="/library/img/gd_product_4.jpeg" />
                 </button>
               </div>
               <div class="gr_a_content_date">
@@ -456,14 +521,22 @@
 
 
     <div class="modal-container" id="modalContainer">
+
       <div class="modal">
+        <div class="modal_btn">
+          <button class="modal_next_btn" id="modal_prev_btn">
+            <span>
+              <svg width="23" height="44" viewBox="0 0 23 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 1.5L2 22L22 42.5" stroke="black" stroke-width="2"></path></svg>
+            </span>
+          </button>
+        </div>
         <header>
           <span class="mh_title">사진 후기</span>
           <button class="mh_btn" id="modal_btnClose"><span>X</span></button>
         </header>
         <div class="modal_main">
           <div class="mm_img">
-             <img src="/library/img/elicegg.png" alt="Modal Image">
+             <img src="/library/img/gd_product_4.jpeg" alt="modal_image" data-num=1 id="modal_review_img">
           </div>
 
           <div class="mm_review">
@@ -471,10 +544,10 @@
               <span class="gr_a_n_grade">일반</span>
               <span class="gr_a_n_username">엘**</span>
             </div>
-            <div class="gr_a_product_name">[리뷰 상품 이름] 상품 이름 </div>
+            <div class="gr_a_product_name" id="gr_a_product_name">[리뷰 상품 이름] 상품 이름 </div>
 
             <div class="gr_a_content_detail">
-              <p> 리뷰 내용 입니다. 리뷰 내용 입니다. 리뷰 내용 입니다. 리뷰 내용 입니다. 리뷰 내용 입니다.
+              <p id="gr_a_content_detail"> 리뷰 내용 입니다. 리뷰 내용 입니다. 리뷰 내용 입니다. 리뷰 내용 입니다. 리뷰 내용 입니다.
                
               </p>
             </div>
@@ -495,8 +568,16 @@
 
           </div>
         </div>
+
        
-      </div?>
+      </div>
+      <div class="modal_btn_r">
+        <button class="modal_next_btn" id="modal_next_btn">
+          <span>
+            <svg width="23" height="44" viewBox="0 0 23 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.5L21 22L1 42.5" stroke="black" stroke-width="2"></path></svg>
+          </span>
+        </button>
+      </div>
     </div>
     
     <div class="background" id="background"></div>
@@ -506,7 +587,8 @@
       src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
       integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
       crossorigin="anonymous"
-    ></script>
+    >
+    </script>
     <script src="../library/js/goodDetail.js"></script>
   </body>
 </html>
